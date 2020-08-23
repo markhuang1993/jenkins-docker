@@ -5,3 +5,5 @@ exit
 ping
 ping gitlab.example.com gitlab
 exit
+ls -la /home
+exit

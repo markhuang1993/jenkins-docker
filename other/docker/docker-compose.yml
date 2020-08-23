@@ -9,33 +9,42 @@ services:
           - 'jenkins.master.mark.com'
     restart: always
     ports:
+      - "18002:22"
       - "18080:8080"
     volumes:
       - './jenkins_master/jenkins_home:/var/jenkins_home'
-  jenkins-slash1:
-    image: jenkins/jenkins
-    container_name: jenkins-sl1
+  jenkins-agent1:
+    image: jenkins/agent
+    command: 'java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://jenkins.master.mark.com:8080/computer/agent1/slave-agent.jnlp -secret 09d615c2aee0411f4e4ee357818ea4640e3163a34b2124689d74f818605d3fee -workDir /home/jenkins/agent'
+    container_name: jenkins-agent1
     networks:
       my-net:
         aliases:
-          - 'jenkins.slave1.mark.com'
+          - 'jenkins.agent1.mark.com'
     restart: always
     ports:
+      - "18012:22"
       - "18081:8080"
     volumes:
-      - './jenkins_slave1/jenkins_home:/var/jenkins_home'
-  jenkins-slash2:
-    image: jenkins/jenkins
-    container_name: jenkins-sl2
+      - './jenkins_agent1:/home/jenkins/agent'
+    depends_on:
+      - jenkins-master
+  jenkins-agent2:
+    image: jenkins/agent
+    command: 'java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://jenkins.master.mark.com:8080/computer/agent2/slave-agent.jnlp -secret fefa025b63c81b9716cd8025e860eb01b3f284166cb496ff30d069acf56ccd44 -workDir /home/jenkins/agent'
+    container_name: jenkins-agent2
     networks:
       my-net:
         aliases:
-          - 'jenkins.slave2.mark.com'
+          - 'jenkins.agent2.mark.com'
     restart: always
     ports:
+      - "18022:22"
       - "18082:8080"
     volumes:
-      - './jenkins_slave2/jenkins_home:/var/jenkins_home'
+      - './jenkins_agent2:/home/jenkins/agent'
+    depends_on:
+      - jenkins-master
   gitea:
     image: 'gitea/gitea:latest'
     container_name: 'jenkins-gitea'
