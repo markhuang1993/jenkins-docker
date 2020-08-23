@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2020-08-23 12:13:53.252 UTC</timestamp>
+  <md5sum>f5d19ea66f3573568484bf9f6634db7c</md5sum>
+  <fileName>Credential id=58b874a9-10f6-43dc-87c6-a19229e3ea7d name=mark/******</fileName>
+  <usages>
+    <entry>
+      <string>MyFirstGit</string>
+      <ranges>1</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

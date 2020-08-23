@@ -1,0 +1,26 @@
+Started by user [8mha:////4Dlsp3VRF4DacnwgHO/mJHJlIIUtdIl9m0C3aaH7uMUFAAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyWEgYu/dLi1CL93MSibADgXuyivwAAAA==[0mmark
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/MyFirstGit
+using credential 58b874a9-10f6-43dc-87c6-a19229e3ea7d
+Cloning the remote Git repository
+Cloning repository http://gitea.mark.com:3000/mark/MyFirstRepo.git
+ > git init /var/jenkins_home/workspace/MyFirstGit # timeout=10
+Fetching upstream changes from http://gitea.mark.com:3000/mark/MyFirstRepo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.11.0'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress -- http://gitea.mark.com:3000/mark/MyFirstRepo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://gitea.mark.com:3000/mark/MyFirstRepo.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://gitea.mark.com:3000/mark/MyFirstRepo.git # timeout=10
+Fetching upstream changes from http://gitea.mark.com:3000/mark/MyFirstRepo.git
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress -- http://gitea.mark.com:3000/mark/MyFirstRepo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision dc7ce1457caa1cd489247076c974a15e563b4dcd (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f dc7ce1457caa1cd489247076c974a15e563b4dcd # timeout=10
+Commit message: "Initial commit"
+First time build. Skipping changelog.
+Finished: SUCCESS
